@@ -1,5 +1,5 @@
 /*
- * Scroll Controller — reels-blocker.js
+ * Scroll Controller: reels-blocker.js
  *
  * The one script both apps (Android and iOS) inject into instagram.com.
  * It hides Reels and keeps you out of Reels pages. Nothing else.
@@ -29,7 +29,7 @@
   var HIDDEN_ATTR = 'data-sc-hidden';
 
   /* ------------------------------------------------------------------ *
-   * SELECTORS — what gets hidden
+   * SELECTORS: what gets hidden
    * ------------------------------------------------------------------ */
 
   // Navigation entries that lead to Reels. Their wrapper is hidden too,
@@ -57,14 +57,14 @@
     ALL_LINKS + '{display:none !important;}',
     // 2. Elements the observer below marked as "only holds a Reels link".
     '[' + HIDDEN_ATTR + ']{display:none !important;}',
-    // 3. Home-feed posts that are Reels: hide the whole post, not just its link,
+    // 3. Home-feed posts that are Reels: hide the whole post instead of only its link,
     //    so the video doesn't keep playing. (:has() is supported by iOS 16+ Safari
     //    and current Android WebView; older engines simply ignore this line.)
     'article:has(a[href*="/reel/"]){display:none !important;}'
   ].join('\n');
 
   /* ------------------------------------------------------------------ *
-   * PATH RULES — which URLs count as "Reels pages"
+   * PATH RULES: which URLs count as "Reels pages"
    * ------------------------------------------------------------------ */
 
   // Returns where to send the user instead, or null if the path is fine.

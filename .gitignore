@@ -17,7 +17,7 @@ android/.cxx/
 *.apk
 *.aab
 
-# Signing secrets — never commit these
+# Signing secrets. Never commit these.
 *.jks
 *.keystore
 keystore.properties

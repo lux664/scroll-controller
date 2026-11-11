@@ -23,7 +23,7 @@ android {
         }
     }
 
-    // Use the ONE shared script directly — no copy lives in this folder.
+    // Use the ONE shared script directly. No copy lives in this folder.
     sourceSets["main"].assets.srcDirs("../../shared")
 
     compileOptions {

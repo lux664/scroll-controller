@@ -1,94 +1,65 @@
 # Scroll Controller
 
-Use Instagram without Reels. Free and open source, for Android and iPhone.
+Use Instagram without Reels. A free, open-source app for iPhone and Android.
 
-Scroll Controller opens Instagram's **website** inside the app and hides Reels: the Reels tab, Reels in your feed and on profiles, and Reels links. If you open a Reel (for example from a DM), you land on your home feed instead. One switch at the top turns it on or off.
+Scroll Controller opens Instagram's mobile website inside the app and hides everything to do with Reels. You still get your feed, stories, messages, search, profiles and posting. There's one switch at the top of the screen, **Hide Reels**, and you can flip it at any time.
 
-No accounts, no ads, no tracking, no paywall. The app only talks to Instagram.
+There are no ads, accounts, subscriptions or tracking. The app talks to instagram.com and nothing else.
 
-> Not affiliated with Instagram or Meta.
+> Scroll Controller is not affiliated with Instagram or Meta.
 
-## Honest limits
+## What gets hidden
 
-- It's Instagram's **website**, not the Instagram app. Some features are missing on the web, such as posting Reels or adding music to stories.
-- When Instagram changes its website, Reels can briefly show up again until the script is updated (see [Fixing it when Instagram changes](#fixing-it-when-instagram-changes)).
-- You log in once on Instagram's own login page inside the app. Your password goes only to Instagram.
+With **Hide Reels** on:
+
+- The Reels tab disappears from the bottom bar, and the other tabs close the gap.
+- Reel posts are removed from your home feed.
+- The Reels tab on people's profiles is hidden.
+- If you open a Reel from a message or a link, you land on your home feed instead.
+
+Turn the switch off and you get the normal Instagram website back straight away, without reloading.
+
+## Limits you should know about
+
+Scroll Controller is Instagram's website in a frame, so anything the website can't do, the app can't do either. Posting Reels and adding music to stories are the main gaps.
+
+Instagram changes its website often. When that happens, Reels can show up again until the script is updated. The fix is usually a one-line change in [`shared/reels-blocker.js`](shared/reels-blocker.js), and [CONTRIBUTING.md](CONTRIBUTING.md) explains how to make it.
 
 ## Install
 
-### Android
+No release has been published yet. Until the first one is out, you can build the app yourself with the guides below.
 
-1. On your phone, open the [Releases](../../releases) page and download the latest `ScrollController-x.y.z.apk`.
-2. Open the file. If Android asks, allow installing apps from your browser or file manager ("Install unknown apps").
-3. Open Scroll Controller and log in to Instagram.
+- **iPhone:** [docs/iphone.md](docs/iphone.md) covers AltStore or SideStore (no Mac needed, once a release exists) and installing with Xcode over a cable.
+- **Android:** [docs/android.md](docs/android.md) covers installing the APK and building it with Android Studio.
 
-Note: Google is rolling out "developer verification" for apps installed outside the Play Store, country by country (first Brazil, Indonesia, Singapore and Thailand from 30 September 2026, then worldwide in 2027). In those countries, Android may show extra steps before installing an app from an unregistered developer.
+Both platforms are free to install. On iPhone a free Apple ID is enough, though Apple makes you refresh the app every 7 days.
 
-### iPhone
+## Getting the most out of it
 
-Apple doesn't allow apps like this in the App Store without a paid developer account, so you install it yourself with a **free Apple ID**:
+The app works best if you stop opening the real Instagram app. Put a limit on it with **Screen Time** on iPhone (Settings → Screen Time → App Limits) or **Digital Wellbeing** on Android (Settings → Digital Wellbeing → Dashboard → Instagram → App timer), then use Scroll Controller for your feed and messages.
 
-1. Install [AltStore](https://altstore.io) or [SideStore](https://sidestore.io) and sign in with your Apple ID.
-2. Download the latest `ScrollController-x.y.z.ipa` from [Releases](../../releases) on your iPhone.
-3. Open it with AltStore/SideStore to install.
-4. **Refresh it every 7 days** in AltStore/SideStore. Free Apple IDs can only sign apps for 7 days; if you forget, the app won't open until you refresh it.
-
-Developers with a Mac can also build and run it straight from Xcode (below).
-
-### Tip
-
-To actually stop scrolling Reels, limit or block the real Instagram app with **Screen Time** (iPhone: Settings → Screen Time → App Limits) or **Digital Wellbeing** (Android: Settings → Digital Wellbeing → Dashboard → Instagram → App timer), and use Scroll Controller instead.
-
-## Build from source
+## How it's built
 
 ```
 scroll-controller/
-├── shared/reels-blocker.js   # the script both apps inject (the actual Reels hiding)
-├── android/                  # Kotlin app (WebView)
-└── ios/                      # SwiftUI app (WKWebView), project generated by XcodeGen
+├── shared/reels-blocker.js   the script that hides Reels, used by both apps
+├── ios/                      SwiftUI app with a WKWebView (project made with XcodeGen)
+├── android/                  Kotlin app with a WebView
+└── docs/                     install guides and technical notes
 ```
 
-Both apps load the same `shared/reels-blocker.js`; there is no second copy.
-
-### Android
-
-Needs [Android Studio](https://developer.android.com/studio) (it includes the Android SDK and a JDK).
-
-```sh
-cd android
-./gradlew assembleDebug
-# APK: android/app/build/outputs/apk/debug/app-debug.apk
-```
-
-Or open the `android` folder in Android Studio and press Run.
-
-### iPhone
-
-Needs a Mac with [Xcode](https://apps.apple.com/app/xcode/id497799835) and [XcodeGen](https://github.com/yonaskolb/XcodeGen).
-
-```sh
-brew install xcodegen
-cd ios
-xcodegen generate
-open ScrollController.xcodeproj
-```
-
-In Xcode, choose the **ScrollController** target → **Signing & Capabilities** → pick your Team (your free Apple ID works). If Xcode says the bundle identifier is taken, change it to something unique. Then pick a simulator or your iPhone and press Run. The app uses no paid-only capabilities.
-
-## Fixing it when Instagram changes
-
-All the Reels logic is in [`shared/reels-blocker.js`](shared/reels-blocker.js). It finds Reels by their **link address** (`/reels/`, `/reel/…`, `/<user>/reels/`) rather than by Instagram's class names, which are random and change often. The file is short and every rule is commented.
-
-If Reels come back:
-
-1. Open instagram.com in a desktop browser with a phone-sized window (or your phone's browser), log in, and inspect the Reels element that reappeared.
-2. Find the link it uses and add or adjust a selector in the **SELECTORS** section, or a path in **PATH RULES**.
-3. Rebuild the app. Pull requests are welcome.
+Both apps load the same script file from `shared/`, so a fix there applies to iPhone and Android at once. [docs/how-it-works.md](docs/how-it-works.md) explains the details.
 
 ## Privacy
 
-The app has no analytics, no crash reporting and no servers of its own. It loads `instagram.com`; Instagram's own privacy policy applies to what you do there. Links to other sites open in your normal browser.
+The app has no analytics, crash reporting or servers of its own. Your Instagram login stays in the app's storage on your phone. More in [PRIVACY.md](PRIVACY.md).
+
+## Contributing
+
+Bug reports and pull requests are welcome, especially when Instagram changes something and Reels sneak back in. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-[MIT](LICENSE). Not affiliated with Instagram or Meta.
+[MIT](LICENSE). You can use, change and share the code freely as long as the copyright notice stays with it.
+
+Instagram is a trademark of Meta Platforms, Inc. This project is independent and is not endorsed by or connected to Meta.
