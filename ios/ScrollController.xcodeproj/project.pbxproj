@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15A954C1A2DCD7C58A962F9A /* InstagramWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5105481D290FB038BFF8C5 /* InstagramWebView.swift */; };
+		1712B7F70ABC38457C208FD4 /* reels-blocker.js in Resources */ = {isa = PBXBuildFile; fileRef = F1D3C23752D4619355922EBF /* reels-blocker.js */; };
+		378C0AA2B8E622AF0E454154 /* ScrollControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1513EA98723F73CD5C3D9082 /* ScrollControllerApp.swift */; };
+		7BA2214A73F5BF2331E20A46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E18BE692FFB7F7242046D03 /* Assets.xcassets */; };
+		EF7A6F52EA4B67A3640F7648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4441F6570CBFA1609D16EFAB /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05AECDBCD474F88B3FB18130 /* ScrollController.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ScrollController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A5105481D290FB038BFF8C5 /* InstagramWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramWebView.swift; sourceTree = "<group>"; };
+		1513EA98723F73CD5C3D9082 /* ScrollControllerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollControllerApp.swift; sourceTree = "<group>"; };
+		4441F6570CBFA1609D16EFAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4E18BE692FFB7F7242046D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1D3C23752D4619355922EBF /* reels-blocker.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "reels-blocker.js"; path = "../shared/reels-blocker.js"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3C6496093F4D6E783DEE0A6D /* ScrollController */ = {
+			isa = PBXGroup;
+			children = (
+				4E18BE692FFB7F7242046D03 /* Assets.xcassets */,
+				4441F6570CBFA1609D16EFAB /* ContentView.swift */,
+				0A5105481D290FB038BFF8C5 /* InstagramWebView.swift */,
+				1513EA98723F73CD5C3D9082 /* ScrollControllerApp.swift */,
+			);
+			path = ScrollController;
+			sourceTree = "<group>";
+		};
+		725E4B04C082570C6D9C0922 = {
+			isa = PBXGroup;
+			children = (
+				3C6496093F4D6E783DEE0A6D /* ScrollController */,
+				AEF95908548764D6859E0FDE /* Shared */,
+				F73B5CDF47A59F2DF0007EEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEF95908548764D6859E0FDE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F1D3C23752D4619355922EBF /* reels-blocker.js */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		F73B5CDF47A59F2DF0007EEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05AECDBCD474F88B3FB18130 /* ScrollController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B8C7D4954AC5396467DD9632 /* ScrollController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C32718D022AC158008CD5D2 /* Build configuration list for PBXNativeTarget "ScrollController" */;
+			buildPhases = (
+				2B9DA6D476AEE750AF6C27F5 /* Sources */,
+				2BE1C1CA36B6D34B510BB3D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrollController;
+			packageProductDependencies = (
+			);
+			productName = ScrollController;
+			productReference = 05AECDBCD474F88B3FB18130 /* ScrollController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C2C303DD0EDA5D64114D5DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					B8C7D4954AC5396467DD9632 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 25930BE7BA2036CDCD8281BC /* Build configuration list for PBXProject "ScrollController" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 725E4B04C082570C6D9C0922;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F73B5CDF47A59F2DF0007EEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8C7D4954AC5396467DD9632 /* ScrollController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BE1C1CA36B6D34B510BB3D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BA2214A73F5BF2331E20A46 /* Assets.xcassets in Resources */,
+				1712B7F70ABC38457C208FD4 /* reels-blocker.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B9DA6D476AEE750AF6C27F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF7A6F52EA4B67A3640F7648 /* ContentView.swift in Sources */,
+				15A954C1A2DCD7C58A962F9A /* InstagramWebView.swift in Sources */,
+				378C0AA2B8E622AF0E454154 /* ScrollControllerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2AFA9597DC0CBFF3403CADED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Scroll Controller";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Lets you take a photo or video to post on Instagram.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Lets you record video with sound to post on Instagram.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Lets you choose photos and videos to post on Instagram.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.lux664.scrollcontroller;
+				PRODUCT_NAME = ScrollController;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		34F25814E478F6A9CC3861AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8CEA6A4D53DF6EA78CC393BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DF891036BF453F41D986F7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Scroll Controller";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Lets you take a photo or video to post on Instagram.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Lets you record video with sound to post on Instagram.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Lets you choose photos and videos to post on Instagram.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.lux664.scrollcontroller;
+				PRODUCT_NAME = ScrollController;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25930BE7BA2036CDCD8281BC /* Build configuration list for PBXProject "ScrollController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CEA6A4D53DF6EA78CC393BF /* Debug */,
+				34F25814E478F6A9CC3861AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8C32718D022AC158008CD5D2 /* Build configuration list for PBXNativeTarget "ScrollController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AFA9597DC0CBFF3403CADED /* Debug */,
+				DF891036BF453F41D986F7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C2C303DD0EDA5D64114D5DD /* Project object */;
+}

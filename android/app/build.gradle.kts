@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         // io.github.<github-username>.scrollcontroller
-        applicationId = "io.github.changeme.scrollcontroller"
+        applicationId = "io.github.lux664.scrollcontroller"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

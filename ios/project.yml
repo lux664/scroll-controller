@@ -26,7 +26,7 @@ targets:
     settings:
       base:
         # io.github.<github-username>.scrollcontroller
-        PRODUCT_BUNDLE_IDENTIFIER: io.github.changeme.scrollcontroller
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.lux664.scrollcontroller
         PRODUCT_NAME: ScrollController
         TARGETED_DEVICE_FAMILY: "1"
         GENERATE_INFOPLIST_FILE: YES
