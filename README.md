@@ -1,6 +1,6 @@
 # Scroll Controller
 
-Use Instagram without Reels. A free, open-source app for iPhone and Android.
+Use Instagram without Reels. A free, open-source app for iPhone, with Android coming soon.
 
 Scroll Controller opens Instagram's mobile website inside the app and hides everything to do with Reels. You still get your feed, stories, messages, search, profiles and posting. There's one switch at the top of the screen, **Hide Reels**, and you can flip it at any time.
 
@@ -30,9 +30,9 @@ Instagram changes its website often. When that happens, Reels can show up again 
 No release has been published yet. Until the first one is out, you can build the app yourself with the guides below.
 
 - **iPhone:** [docs/iphone.md](docs/iphone.md) covers AltStore or SideStore (no Mac needed, once a release exists) and installing with Xcode over a cable.
-- **Android:** [docs/android.md](docs/android.md) covers installing the APK and building it with Android Studio.
+- **Android:** coming soon. The Android version is in the `android/` folder and builds, but it hasn't been tested on a phone yet. [docs/android.md](docs/android.md) has the build steps if you want to try it early.
 
-Both platforms are free to install. On iPhone a free Apple ID is enough, though Apple makes you refresh the app every 7 days.
+The app is free to install. On iPhone a free Apple ID is enough, though Apple makes you refresh the app every 7 days.
 
 ## Getting the most out of it
 

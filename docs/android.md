@@ -1,5 +1,7 @@
 # Installing on Android
 
+> **Coming soon.** The Android app builds, but it hasn't been tested on a real phone yet, so there's no APK release. If you try it, please open an issue and say how it went.
+
 Requires Android 8.0 or newer.
 
 ## Install the APK
