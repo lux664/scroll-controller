@@ -34,17 +34,20 @@
 
   // Navigation entries that lead to Reels. Their wrapper is hidden too,
   // so the tab disappears without leaving an empty gap.
+  // Checked against logged-in mobile instagram.com, November 2026.
   var NAV_LINK_SELECTORS = [
-    'a[href="/reels/"]',            // Reels tab in the bottom bar / side bar
-    'a[href^="/reels/"]',           // any /reels/... link (Reels feed, audio pages)
-    'a[href$="/reels/"]'            // "Reels" tab on a profile page: /<user>/reels/
+    'a[href="/reels/"]',            // Reels tab in the bottom bar
+    'a[href^="/reels/"]',           // /reels/audio/<id>/ ("Original audio" under Reel posts)
+    'a[href$="/reels/"]',           // "Reels" tab on a profile page: /<user>/reels/
+    'a[href*="instagram.com/reels/"]'
   ];
 
-  // Links to a single Reel (feed, Explore grid, DMs, profiles).
+  // Links to a single Reel. Instagram uses two shapes:
+  //   /<user>/reel/<code>/  (home feed, the timestamp link on a Reel post)
+  //   /reel/<code>/         (shared links, DMs, Explore)
+  // "/reel/" with both slashes doesn't match usernames that contain "reel".
   var REEL_LINK_SELECTORS = [
-    'a[href^="/reel/"]',            // /reel/<code>/
-    'a[href*="instagram.com/reel/"]',
-    'a[href*="instagram.com/reels/"]'
+    'a[href*="/reel/"]'
   ];
 
   var ALL_LINKS = NAV_LINK_SELECTORS.concat(REEL_LINK_SELECTORS).join(',');
@@ -57,7 +60,7 @@
     // 3. Home-feed posts that are Reels: hide the whole post, not just its link,
     //    so the video doesn't keep playing. (:has() is supported by iOS 16+ Safari
     //    and current Android WebView; older engines simply ignore this line.)
-    'article:has(a[href^="/reel/"]){display:none !important;}'
+    'article:has(a[href*="/reel/"]){display:none !important;}'
   ].join('\n');
 
   /* ------------------------------------------------------------------ *
@@ -67,6 +70,7 @@
   // Returns where to send the user instead, or null if the path is fine.
   function redirectTargetFor(path) {
     if (/^\/reels?(\/|$)/.test(path)) return '/';              // /reels/, /reel/<code>/
+    if (/^\/[^\/]+\/reel\//.test(path)) return '/';            // /<user>/reel/<code>/
     var m = path.match(/^\/([^\/]+)\/reels\/?$/);              // /<user>/reels/
     if (m) return '/' + m[1] + '/';
     return null;
