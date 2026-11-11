@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Android / Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/*.iml
+android/app/*.iml
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+*.apk
+*.aab
+
+# Signing secrets — never commit these
+*.jks
+*.keystore
+keystore.properties
+
+# Xcode
+ios/build/
+ios/DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+ios/*.xcodeproj/project.xcworkspace/xcuserdata/
+*.ipa
+*.dSYM.zip
+*.dSYM
+ios/Payload/
+
+# Editors
+.vscode/
+*.swp

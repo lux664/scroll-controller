@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scroll Controller</string>
+    <string name="hide_reels">Hide Reels</string>
+    <string name="about_title">About Scroll Controller</string>
+    <string name="about_text">A free, open-source way to use Instagram\'s website without Reels.\n\nNo accounts, ads or tracking. The app only talks to Instagram.\n\nNot affiliated with Instagram or Meta.\n\nMIT License</string>
+    <string name="ok">OK</string>
+</resources>
