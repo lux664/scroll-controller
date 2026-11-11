@@ -76,13 +76,16 @@
    * Implementation
    * ------------------------------------------------------------------ */
 
+  // At document start even <html> may not exist yet. In that case this does
+  // nothing, and the MutationObserver below calls it again as soon as it can.
   function addStyle() {
     if (document.getElementById(STYLE_ID)) return;
+    var parent = document.head || document.documentElement;
+    if (!parent) return;
     var style = document.createElement('style');
     style.id = STYLE_ID;
     style.textContent = CSS;
-    // At document start <head> may not exist yet; <html> always does.
-    (document.head || document.documentElement).appendChild(style);
+    parent.appendChild(style);
   }
 
   function removeStyle() {
@@ -132,10 +135,13 @@
   wrapHistory('replaceState');
   window.addEventListener('popstate', checkLocation);
 
-  // Re-mark wrappers as Instagram re-renders the page (batched per frame).
+  // As Instagram re-renders the page: make sure our <style> is still there
+  // and re-mark wrappers (batched to once per frame).
   var scheduled = false;
   var observer = new MutationObserver(function () {
-    if (scheduled || !enabled) return;
+    if (!enabled) return;
+    addStyle();
+    if (scheduled) return;
     scheduled = true;
     requestAnimationFrame(function () {
       scheduled = false;
@@ -144,7 +150,8 @@
   });
 
   function startObserver() {
-    observer.observe(document.documentElement, { childList: true, subtree: true });
+    // Observe `document` itself: it exists even before <html> does.
+    observer.observe(document, { childList: true, subtree: true });
   }
 
   function setEnabled(value) {
