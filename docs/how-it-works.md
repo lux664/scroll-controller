@@ -61,6 +61,17 @@ Instagram is a single-page app, so moving between pages usually happens without 
 
 The same check runs when the page first loads, which covers links opened from messages. It also runs when you turn the switch on while a Reels page is open.
 
+Instagram has moved between page changes using `history.pushState`, the newer Navigation API and other routes, so the script watches all of them. It wraps `History.prototype` (so calls that skip the `history` object are caught), cancels Reels navigations through the Navigation API's `navigate` event where the browser allows it, and checks the address twice a second as a fallback.
+
+### Reels opened from a chat
+
+In the mobile layout, tapping a Reel that someone sent you opens a swipeable Reels viewer on top of the chat, and the address stays `/direct/t/<id>/`. On desktop layouts the same tap opens `/p/<code>/` in a dialog. Neither address looks like a Reel, so the script recognises the viewer by its content instead:
+
+- on a chat page (`/direct/...`) or a single post (`/p/...`), a video on screen takes up at least 75% of the window height
+- the page also contains a Reel audio link (`/reels/audio/<id>/`)
+
+When both are true, the script pauses the videos and loads the home feed. Photos and personal videos sent in a chat have no audio link, so they open normally. The home feed and stories are never checked, since stories are full screen and can have music too.
+
 ### Injection timing
 
 The script runs at document start, before Instagram's code. At that moment even the `<html>` element may not exist yet, so adding the style is retried until there's a place to put it.
