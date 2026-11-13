@@ -5,14 +5,14 @@ Apple doesn't allow apps like this on the App Store without a paid developer acc
 | | AltStore or SideStore | Xcode with a cable |
 |---|---|---|
 | Needs a Mac | No (AltStore needs a computer once) | Yes |
-| Needs a released IPA file | Yes | No, it builds from the source |
+| Uses the IPA from Releases | Yes | No, it builds from the source |
 | Refresh every 7 days | Yes, from the AltStore or SideStore app | Yes, by pressing Run again |
 
 Requires iOS 16 or newer.
 
 ## Option 1: AltStore or SideStore
 
-This option needs an IPA file from the [Releases](../../../releases) page. None has been published yet, so for now use option 2.
+This option uses the IPA file from the [Releases](../../../releases) page and doesn't need a Mac after AltStore or SideStore is set up.
 
 1. Install [AltStore](https://altstore.io) or [SideStore](https://sidestore.io) by following the instructions on their website, and sign in with your Apple ID.
 2. On your iPhone, download the latest `ScrollController-x.y.z.ipa` from Releases.
@@ -66,6 +66,16 @@ A free Apple ID signs the app for 7 days. When it stops opening, plug the phone 
 ### If you plan to contribute
 
 When you pick a team, Xcode writes your team ID into `ios/ScrollController.xcodeproj/project.pbxproj` as `DEVELOPMENT_TEAM`. Please don't commit that line. See [CONTRIBUTING.md](../CONTRIBUTING.md) for a small pre-commit hook that blocks it.
+
+## Building the IPA yourself
+
+To make your own IPA, for example to publish a release, run this on a Mac with Xcode:
+
+```sh
+./scripts/build-ipa.sh
+```
+
+The file ends up in `ios/build/ipa/ScrollController-<version>.ipa`. It's unsigned on purpose: AltStore and SideStore sign it with the user's own Apple ID during install. The script switches signing off and clears `DEVELOPMENT_TEAM`, so your team ID and device IDs never end up in the file.
 
 ## Using the app
 

@@ -1,12 +1,10 @@
 # Installing on Android
 
-> **Coming soon.** The Android app builds, but it hasn't been tested on a real phone yet, so there's no APK release. If you try it, please open an issue and say how it went.
+> **Early version.** The Android app builds and passes our checks, but it hasn't been tried on a real phone yet. If something doesn't work, please [open an issue](../../../issues) with your phone model and Android version.
 
 Requires Android 8.0 or newer.
 
 ## Install the APK
-
-No release has been published yet, so for now build the APK yourself (below). Once releases exist:
 
 1. On your phone, open the [Releases](../../../releases) page and download the latest `ScrollController-x.y.z.apk`.
 2. Open the downloaded file. If Android asks, allow your browser or file manager to **install unknown apps**.
@@ -33,6 +31,21 @@ To install the debug APK on a phone over USB, turn on **USB debugging** under De
 ```sh
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
+
+### Signed release builds
+
+Release APKs are signed so that later versions install as updates. The signing key isn't in the repo. To sign your own builds, create `android/keystore.properties` (it's ignored by git) pointing to your own key:
+
+```properties
+storeFile=/path/to/your-release-key.jks
+storePassword=...
+keyAlias=...
+keyPassword=...
+```
+
+Then run `./gradlew assembleRelease`. Without that file, `assembleRelease` makes an unsigned APK, which Android won't install. Use `assembleDebug` for testing instead.
+
+An APK signed with a different key can't update the official one. Uninstall Scroll Controller first if you switch between them.
 
 ## Using the app
 

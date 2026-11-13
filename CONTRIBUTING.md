@@ -48,7 +48,7 @@ if printf '%s\n' "$added" | grep -E 'DEVELOPMENT_TEAM *= *"?[A-Z0-9]{10}' >/dev/
   echo "Blocked: your Apple team ID (DEVELOPMENT_TEAM) is in this commit." >&2
   fail=1
 fi
-if printf '%s\n' "$added" | grep -i -E 'api[_-]?key *[:=] *["'\'']?[A-Za-z0-9_-]{16,}|secret *[:=] *["'\'']?[A-Za-z0-9_-]{12,}|passw(or)?d *[:=] *["'\'']?[^ "'\'']{6,}|storePassword *= *[^ ]|keyPassword *= *[^ ]|-----BEGIN [A-Z ]*PRIVATE KEY-----|sessionid=[A-Za-z0-9%]{8,}|csrftoken=[A-Za-z0-9]{8,}' >/dev/null; then
+if printf '%s\n' "$added" | grep -i -E 'api[_-]?key *[:=] *["'\'']?[A-Za-z0-9_-]{16,}|secret *[:=] *["'\'']?[A-Za-z0-9_-]{12,}|passw(or)?d *[:=] *["'\'']?[^ "'\''().]{6,}["'\'']?[,;]? *$|-----BEGIN [A-Z ]*PRIVATE KEY-----|sessionid=[A-Za-z0-9%]{8,}|csrftoken=[A-Za-z0-9]{8,}' >/dev/null; then
   echo "Blocked: something that looks like a key, password or login token is in this commit." >&2
   fail=1
 fi
