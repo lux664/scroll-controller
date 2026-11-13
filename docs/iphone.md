@@ -2,24 +2,25 @@
 
 Apple doesn't allow apps like this on the App Store without a paid developer account, so you install Scroll Controller yourself. There are two ways to do it. Both work with a free Apple ID.
 
-| | AltStore or SideStore | Xcode with a cable |
+| | AltStore | Xcode with a cable |
 |---|---|---|
-| Needs a Mac | No (AltStore needs a computer once) | Yes |
+| Needs a computer | A Mac or Windows PC for setup and the weekly refresh | A Mac |
 | Uses the IPA from Releases | Yes | No, it builds from the source |
-| Refresh every 7 days | Yes, from the AltStore or SideStore app | Yes, by pressing Run again |
+| Refresh every 7 days | Yes, from AltStore while the computer is on the same Wi-Fi | Yes, by pressing Run again |
 
 Requires iOS 16 or newer.
 
-## Option 1: AltStore or SideStore
+## Option 1: AltStore
 
-This option uses the IPA file from the [Releases](../../../releases) page and doesn't need a Mac after AltStore or SideStore is set up.
+This is the way for most people. It uses the IPA file from the [Releases](../../../releases) page and works with a Mac or a Windows PC.
 
-1. Install [AltStore](https://altstore.io) or [SideStore](https://sidestore.io) by following the instructions on their website, and sign in with your Apple ID.
-2. On your iPhone, download the latest `ScrollController-x.y.z.ipa` from Releases.
-3. Open the file with AltStore or SideStore and install it.
-4. Open Scroll Controller and log in to Instagram.
+The full walkthrough, with separate steps for Mac and Windows, is in **[install-with-altstore.md](install-with-altstore.md)**. In short:
 
-Free Apple IDs can only sign an app for 7 days. Open AltStore or SideStore at least once a week and refresh Scroll Controller there. If you miss it, the app won't open until you refresh it, but your login is kept.
+1. Install AltServer on your computer and use it to put AltStore on your iPhone.
+2. On the iPhone, download `ScrollController-x.y.z.ipa` from Releases and install it from AltStore's **My Apps** tab.
+3. Let AltStore refresh it at least once a week, while your iPhone and computer are on the same Wi-Fi.
+
+If you miss the weekly refresh, the app won't open until you refresh it, but your login is kept.
 
 ## Option 2: Xcode with a cable
 
@@ -75,7 +76,7 @@ To make your own IPA, for example to publish a release, run this on a Mac with X
 ./scripts/build-ipa.sh
 ```
 
-The file ends up in `ios/build/ipa/ScrollController-<version>.ipa`. It's unsigned on purpose: AltStore and SideStore sign it with the user's own Apple ID during install. The script switches signing off and clears `DEVELOPMENT_TEAM`, so your team ID and device IDs never end up in the file.
+The file ends up in `ios/build/ipa/ScrollController-<version>.ipa`. It's unsigned on purpose: AltStore signs it with the user's own Apple ID during install. The script switches signing off and clears `DEVELOPMENT_TEAM`, so your team ID and device IDs never end up in the file.
 
 ## Using the app
 

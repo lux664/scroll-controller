@@ -29,7 +29,7 @@ Instagram changes its website often. When that happens, Reels can show up again 
 
 Download the latest version from the [Releases](../../releases) page.
 
-- **iPhone:** install the `.ipa` file with AltStore or SideStore, or build it yourself with Xcode. Both are explained in [docs/iphone.md](docs/iphone.md).
+- **iPhone:** install the `.ipa` file with AltStore and a free Apple ID. [docs/install-with-altstore.md](docs/install-with-altstore.md) walks you through it step by step, for both Mac and Windows. Developers can also build it with Xcode, as described in [docs/iphone.md](docs/iphone.md).
 - **Android:** install the `.apk` file, as explained in [docs/android.md](docs/android.md). The Android version is new and hasn't been tried on a real phone yet, so if something doesn't work, please [open an issue](../../issues).
 
 The app is free to install. On iPhone a free Apple ID is enough, though Apple makes you refresh the app every 7 days.

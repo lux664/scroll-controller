@@ -1,6 +1,6 @@
 #!/bin/sh
-# Builds an unsigned IPA of the iPhone app for AltStore and SideStore,
-# which sign it on the phone with the user's own Apple ID.
+# Builds an unsigned IPA of the iPhone app for AltStore, which signs it
+# with the user's own Apple ID during install.
 #
 # Run on a Mac with Xcode:   ./scripts/build-ipa.sh
 # Output:                    ios/build/ipa/ScrollController-<version>.ipa
