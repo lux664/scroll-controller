@@ -7,7 +7,8 @@
 #
 # Signing is switched off and DEVELOPMENT_TEAM is cleared, so the IPA never
 # contains your Apple team ID, certificate or device IDs, even if Xcode has
-# saved your team in the project file.
+# saved your team in the project file. Debug symbols are stripped so the
+# build folder path (which includes your Mac username) isn't left inside.
 set -eu
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -29,6 +30,12 @@ xcodebuild \
   CODE_SIGNING_REQUIRED=NO \
   CODE_SIGN_IDENTITY="" \
   DEVELOPMENT_TEAM="" \
+  DEPLOYMENT_POSTPROCESSING=YES \
+  STRIP_INSTALLED_PRODUCT=YES \
+  STRIP_STYLE=non-global \
+  COPY_PHASE_STRIP=YES \
+  DEBUG_INFORMATION_FORMAT=dwarf-with-dsym \
+  OTHER_SWIFT_FLAGS="-file-prefix-map $ROOT=." \
   -quiet \
   build
 
@@ -42,6 +49,13 @@ cp -R "$APP" "$OUT/Payload/"
 # unsigned build shouldn't have one; stop if it somehow does.
 if [ -e "$OUT/Payload/ScrollController.app/embedded.mobileprovision" ]; then
   echo "Stopping: the app contains a provisioning profile. Nothing was packaged." >&2
+  exit 1
+fi
+
+# Debug information can hold the folder path the app was built in, which
+# includes your Mac username. The build above strips it; stop if any is left.
+if strings -a "$OUT/Payload/ScrollController.app/ScrollController" | grep -q -e "$HOME" -e "/Users/"; then
+  echo "Stopping: the app still contains a path from this Mac (/Users/...). Nothing was packaged." >&2
   exit 1
 fi
 
